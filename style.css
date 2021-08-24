@@ -1,6 +1,7 @@
 body{
     margin:0%;
     padding:0%;
+    font-family: sans-serif
 }
 .container{
     height: 100vh;
@@ -45,23 +46,35 @@ body{
     margin-bottom: auto;
 }
 .waves_effect{
+    
+    position: relative;
     border-radius: 50%;
     width: 50vmin;
     height: 50vmin;
     border: 1px solid #E8A83F;
+    display: flex;
+    justify-content: center
+}
+.play_button{
+    background-color: #E8A83F;
+    border-radius: 50%;
+    width: 10vmin;
+    height: 10vmin;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .text_box{
     align-items: center;
     color: white;
-    font-family: "Roboto";
+    font-family:'Roboto';
     margin-top: auto;
     margin-bottom: auto;
 }
 .text1{
     font-size: 18px;
     line-height: 1.8;
-    font-family: 'Roboto Mono';
+    font-family: 'Roboto Mono', 'Roboto';
 }
 .text2{
     font-weight: bold;
@@ -72,4 +85,19 @@ body{
 #text2_2{
     margin: 0;
     color: white;
+}
+.pulse_button{
+    background-color: #36FF00;
+    color: #000000;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.pulse_button:hover{
+background-color:#FF7600;
 }
