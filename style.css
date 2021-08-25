@@ -1,7 +1,8 @@
 body{
     margin:0%;
     padding:0%;
-    font-family: sans-serif
+    font-family: sans-serif;
+    overflow: hidden;
 }
 .container{
     height: 100vh;
@@ -44,24 +45,66 @@ body{
     justify-content: space-between;
     margin-top: auto;
     margin-bottom: auto;
+    padding: 30px;
+} 
+.waves_play_box, .waves_effect, .play_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.waves_play_box{
+    margin-top: 50px;
+    margin-right: 180px;
+    width: 200px;
+    height: 300px;
+}
+@keyframes waves_effect_animation {
+    0%{
+        width: 230px;
+        height: 230px;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        width: 650px;
+        height: 650px;
+        opacity: 0;
+    }
 }
 .waves_effect{
-    
-    position: relative;
-    border-radius: 50%;
-    width: 50vmin;
-    height: 50vmin;
     border: 1px solid #E8A83F;
-    display: flex;
-    justify-content: center
+    border-radius: 50%;
+    position: absolute;
+    animation: waves_effect_animation 3s linear infinite;
+}
+#wave_2{
+    animation-delay: 1.5s;
 }
 .play_button{
     background-color: #E8A83F;
     border-radius: 50%;
-    width: 10vmin;
-    height: 10vmin;
+    width: 75px;
+    height: 75px;
     margin-top: auto;
     margin-bottom: auto;
+    box-shadow: 0 0 5em #E8A83F;
+}
+#play_icon{
+    width: 40%;
+}
+@keyframes rotate_effect {
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+.circle_txt{
+    position: absolute;
+    animation: rotate_effect 30s linear infinite;
 }
 
 .text_box{
@@ -77,27 +120,38 @@ body{
     font-family: 'Roboto Mono', 'Roboto';
 }
 .text2{
-    font-weight: bold;
+    font-weight: 900;
     font-size: 60px;
     margin:  0;
+}
+#text2_1{
     color: #E8A83F;
 }
-#text2_2{
-    margin: 0;
-    color: white;
+@keyframes grow_and_reduce{
+    from{
+        transform: scale(1)
+    }
+    to{
+        transform: scale(1.1)
+    }
 }
 .pulse_button{
     background-color: #36FF00;
     color: #000000;
+    margin:40px 0px;
+    display: flex;
     width: 300px;
     height: 60px;
-    display: flex;
     font-size: 18px;
     font-weight: bolder;
     border-radius: 50px;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 10em #36FF00;
+    animation: grow_and_reduce 1s linear infinite;
+    animation-direction: alternate;
 }
 .pulse_button:hover{
-background-color:#FF7600;
+    background-color:#FF7600;
+    box-shadow: 0 0 10em #FF7600;
 }
