@@ -6,7 +6,7 @@ body{
     
 }
 .container{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-color:black;
     padding: 35px;
@@ -30,10 +30,26 @@ body{
     flex-direction: column;
     align-items: center;
 }
+@keyframes jump_initial_effect{
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+    to{
+        transform: translateY(0px);
+        opacity: 100;
+    }
+}
+.logo, .text1, .text2, .pulse_button_box, .waves_play_box, .YouTube_video_box{
+    opacity: 0;
+    animation: jump_initial_effect 1s;
+    animation-fill-mode: forwards;
 
+}
 .logo{
-    margin-top: 5%;
-    max-width: 240px;
+    margin-top: 50px;
+    width: 150px;
+
     /* left: 50%;
     top: 18%;
     margin-right: -50%;
@@ -50,7 +66,60 @@ body{
     margin-bottom: auto;
     padding: 30px;
 } 
+.text_box{
+    align-items: center;
+    color: white;
+    font-family:'Roboto';
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.text1, #text1_screen_2{
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: 'Roboto Mono', 'Roboto';
+    animation-delay: 1s;
 
+}
+.text2{
+    font-weight: 900;
+    font-size: 60px;
+    margin:  0;
+    animation-delay: 2s;
+}
+.text_selected{
+    color: #E8A83F;
+}
+.pulse_button_box{
+    animation-delay:3s;
+}
+@keyframes grow_and_reduce{
+    from{
+        transform: scale(1)
+    }
+    to{
+        transform: scale(1.1)
+    }
+}
+.pulse_button{
+    background-color: #36FF00;
+    color: #000000;
+    margin:40px 0px;
+    display: flex;
+    width: 300px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10em #36FF00;
+    animation: grow_and_reduce 1s linear infinite alternate;
+}
+.pulse_button:hover{
+    background-color:#FF7600;
+    box-shadow: 0 0 10em #FF7600;
+    cursor: pointer;
+}
 .waves_play_box, .waves_effect, .play_button{
     display: flex;
     justify-content: center;
@@ -82,10 +151,11 @@ body{
     border-radius: 50%;
     position: absolute;
     animation: waves_effect_animation 3s linear infinite;
+    animation-delay: 1s;
    
 }
 #wave_2{
-    animation-delay: 1.5s;
+    animation-delay: 2.5s;
 }
 .play_button{
     background-color: #E8A83F;
@@ -95,6 +165,9 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     box-shadow: 0 0 5em #E8A83F;
+}
+.play_button:hover{
+    cursor: pointer;
 }
 #play_icon{
     width: 40%;
@@ -111,63 +184,13 @@ body{
     position: absolute;
     animation: rotate_effect 30s linear infinite;
 }
-
-.text_box, .text_box_screen_2{
-    align-items: center;
-    color: white;
-    font-family:'Roboto';
-    margin-top: auto;
-    margin-bottom: auto;
-}
-.text1,.text1_screen_2{
-    font-size: 18px;
-    line-height: 1.8;
-    font-family: 'Roboto Mono', 'Roboto';
-}
-.text2, .text2_screen_2{
-    font-weight: 900;
-    font-size: 60px;
-    margin:  0;
-}
-.text_selected{
-    color: #E8A83F;
-}
-@keyframes grow_and_reduce{
-    from{
-        transform: scale(1)
-    }
-    to{
-        transform: scale(1.1)
-    }
-}
-.pulse_button, .pulse_button_screen_2{
-    background-color: #36FF00;
-    color: #000000;
-    margin:40px 0px;
-    display: flex;
-    width: 300px;
-    height: 60px;
-    font-size: 18px;
-    font-weight: bolder;
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10em #36FF00;
-    animation: grow_and_reduce 1s linear infinite;
-    animation-direction: alternate;
-}
-.pulse_button:hover, .pulse_button_screen_2:hover{
-    background-color:#FF7600;
-    box-shadow: 0 0 10em #FF7600;
-}
-
 #content_screen_2{
-    display: flex;
+    display: none;
     flex-direction: column;
     width:100%;
     align-items: center;
 }
-.text_box_screen_2, .text2_screen_2{
+#text_box_screen_2, #text2_screen_2_box{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,6 +200,14 @@ body{
 }
 .YouTube_video_box{
     margin-top: 40px;
+    animation-delay:3s;
+
+}
+iframe{
+    border-radius: 10px;
+}
+#pulse_button_box_screen_2{
+    animation-delay: 4s;
 }
 #redlight{
     width: 100%;
@@ -185,7 +216,7 @@ body{
     margin-top: -130px;
 
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
     #content_screen_1{
         display:none;
     }

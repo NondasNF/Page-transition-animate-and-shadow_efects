@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    
+    <script type="text/javascript" src="script.js" ></script>
 </head>
 <body>
     <div class="container">
@@ -12,12 +12,13 @@
             <div id="content_screen_1">
     
                 <img class="logo" src="./assets/logo_large.png" alt="logo of the website" />
-                <div class="center_content">
+                <div class="center_content"type="button" onclick="changeScreenEvent('content_screen_1', 'content_screen_2')">
                     <div class="text_box">
                         <p class="text1">ENTENDA O QUE ESTÁ POR TRÁS<br>DO MÉTODO QUE EU USO PARA GANHAR DE</p>
                         <p class="text2" id="text2_1" ><span class="text_selected">R$ 100,00 à R$ 1.500,00</span></br>Por Dia com Youtube</p>
-                    
-                        <buttom type="button" class="pulse_button">QUERO MEU ACESSO AGORA</buttom>
+                        <div class="pulse_button_box">
+                            <buttom type="button" class="pulse_button">QUERO MEU ACESSO AGORA</buttom>
+                        </div>
                     </div>
                     <div class="waves_play_box">
                         <div class="waves_effect" id="wave_1"></div>
@@ -32,16 +33,18 @@
             </div>
             <div id="content_screen_2">
                 <img class="logo" src="./assets/logo_large.png" alt="logo of the website" />
-                <div class="text_box_screen_2">
-                    <p class="text1_screen_2">ENTENDA O QUE ESTÁ POR TRÁS DO MÉTODO QUE EU USO PARA GANHAR DE</p>
+                <div class="text_box" id="text_box_screen_2">
+                    <p class="text1" id="text1_screen_2">ENTENDA O QUE ESTÁ POR TRÁS DO MÉTODO QUE EU USO PARA GANHAR DE</p>
                     <div id="text2_screen_2_box">
-                        <p class="text2_screen_2" id="text2_1_screen_2" ><span class="text_selected">R$ 100,00 à R$ 1.500,00</span></p>
-                        <p class="text2_screen_2" id="text2_1_screen_2" >Por Dia com Youtube</p>
+                        <p class="text2" id="text2_1_screen_2" ><span class="text_selected">R$ 100,00 à R$ 1.500,00</span></p>
+                        <p class="text2" id="text2_2_screen_2" >Por Dia com Youtube</p>
                     </div>
                     <div class="YouTube_video_box">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/Bz9ztKU1zz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <buttom type="button" class="pulse_button_screen_2">QUERO MEU ACESSO AGORA</buttom>
+                    <div class="pulse_button_box" id="pulse_button_box_screen_2">
+                        <buttom type="button" class="pulse_button">QUERO MEU ACESSO AGORA</buttom>
+                    </div>
                 </div>
             </div>
             <div id="redlight"></div>
