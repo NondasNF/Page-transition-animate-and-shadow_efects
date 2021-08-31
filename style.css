@@ -7,11 +7,10 @@ body{
 }
 .container{
     height: 100%;
-    width: 100vw;
-    background-color:black;
+    width: 100%;
+    background-color: black;
     padding: 35px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 .background-image{
     background-image: url("./assets/background.jpg");
@@ -23,12 +22,13 @@ body{
 
 }
 
-#content_screen_1{
+#content_screen_1, #content_screen_2{
     width: 100%;
-    height: 85%;
-    display:flex;
+    height: 100vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
 }
 @keyframes jump_initial_effect{
     from{
@@ -186,18 +186,13 @@ body{
 }
 #content_screen_2{
     display: none;
-    flex-direction: column;
-    width:100%;
-    align-items: center;
 }
 #text_box_screen_2, #text2_screen_2_box{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.redlight{
-    bottom: -60px;
-}
+
 .YouTube_video_box{
     margin-top: 40px;
     animation-delay:3s;
@@ -213,12 +208,16 @@ iframe{
     width: 100%;
     height: 300px;
     background: url(./assets/lightred1.png) no-repeat center;
-    margin-top: -130px;
+    margin-top: -155px;
+    margin-bottom: -140px;
 
 }
 @media screen and (max-width: 800px) {
     #content_screen_1{
         display:none;
+    }
+    #content_screen_2{
+        display:flex;
     }
 
   } 
